@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#ffffffff"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignBottom="@id/supply_file_name"
+        android:background="@color/colorPrimary"/>
+
+    <android.support.v7.widget.Toolbar
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/toolbar"
+        android:elevation="0dp"
+        app:title="Приемка в Мой Склад"
+
+        app:theme="@style/ToolBarStyle"
+        android:layout_alignParentTop="true"
+
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+
+    <ImageButton
+        android:id="@+id/load_supply"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/settings"
+        android:src="@drawable/ic_folder_open_black_24dp"
+        android:tint="@color/white"
+        style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
+
+        android:textColor="@color/colorPrimaryDark" />
+
+    <ImageButton
+        android:id="@+id/settings"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/ic_settings_black_24dp"
+        android:tint="@color/white"
+        style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
+
+        android:textColor="@color/colorPrimaryDark" />
+
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:padding="16dp"
+        android:drawableLeft="@drawable/ic_list_24dp"
+        android:drawableTint="@color/white"
+        android:drawablePadding="8dp"
+        android:layout_toLeftOf="@id/new_supply"
+
+        android:gravity="center_vertical"
+
+        android:text=""
+        android:id="@+id/supply_file_name"
+        />
+
+    <ImageButton
+        android:id="@+id/new_supply"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_toLeftOf="@id/save_supply"
+        android:gravity="center_vertical"
+        android:src="@drawable/ic_insert_drive_file_black_24dp"
+        android:tint="@color/white"
+        style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_below="@id/toolbar"
+
+        android:textColor="@color/colorPrimaryDark" />
+
+    <ImageButton
+        android:id="@+id/save_supply"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_alignParentRight="true"
+        android:gravity="center_vertical"
+        android:src="@drawable/ic_save_black_24dp"
+        android:tint="@color/white"
+        style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_below="@id/toolbar"
+
+        android:textColor="@color/colorPrimaryDark" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_below="@id/toolbar"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimaryLight"/>
+
+
+    <ProgressBar
+        android:layout_below="@+id/supply_file_name"
+        android:layout_marginTop="96dp"
+        android:id="@+id/spinner"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spinner"
+        android:textColor="@color/colorAccent"
+        android:visibility="visible"
+        android:gravity="center"
+        android:textAlignment="center"
+
+        android:text="Список товаров загружается..."
+        android:id="@+id/message"
+        />
+
+
+
+
+    <TextView
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/supply_file_name"
+        android:textColor="@color/colorAccent"
+        android:visibility="gone"
+
+        android:text="Список товаров в приемке:"
+        android:id="@+id/header"
+        />
+
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header"
+        android:scrollbars="vertical"
+        android:layout_above="@id/buttons"
+
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_below="@id/recycler_view"
+        android:layout_height="1px"
+        android:background="@drawable/separator"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/buttons"
+        >
+
+        <Button
+            android:id="@+id/send"
+            style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:layout_weight="1"
+
+            android:text="Отправить" />
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:background="@drawable/separator"/>
+
+        <Button
+            android:id="@+id/read_barcode"
+
+            style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+
+            android:layout_weight="1"
+
+            android:text="@string/read_barcode" />
+    </LinearLayout>
+
+
+    <FrameLayout
+        android:id="@+id/fragment_stub"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_below="@id/toolbar"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimaryLight"/>
+</RelativeLayout>
+
+
+
+

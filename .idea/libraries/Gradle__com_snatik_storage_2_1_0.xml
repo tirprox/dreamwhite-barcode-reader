@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.snatik:storage-2.1.0">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/storage-2.1.0.aar/d69de5dc83e5e5cdf92546a4db77aa3c/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/storage-2.1.0.aar/d69de5dc83e5e5cdf92546a4db77aa3c/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.snatik/storage/2.1.0/9fdcb989c0ff184b07f621648ce0d9e7aa7095b0/storage-2.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

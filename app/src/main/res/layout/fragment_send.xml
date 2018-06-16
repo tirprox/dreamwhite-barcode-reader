@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimary"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:textColor="#ffffffff"
+        style="@style/TextAppearance.AppCompat.Title.Inverse"
+        android:gravity="center_vertical"
+
+        android:text="Отправка приемки в Мой Склад"
+        android:id="@+id/fragment_title"
+        />
+
+    <TextView
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white70"
+        android:layout_below="@+id/fragment_title"
+        android:textSize="18sp"
+
+        android:text="Склад"
+        android:id="@+id/store_spinner_title"
+        />
+
+    <android.support.v7.widget.AppCompatSpinner
+        android:id="@+id/store_spinner"
+
+        android:popupBackground="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/store_spinner_title"
+
+        app:backgroundTint="@color/white"
+        >
+
+    </android.support.v7.widget.AppCompatSpinner>
+
+    <TextView
+        android:layout_below="@id/store_spinner"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white70"
+        android:textSize="18sp"
+
+
+        android:text="Поставщик"
+        android:id="@+id/agent_spinner_title"
+        />
+
+    <android.support.v7.widget.AppCompatSpinner
+        android:id="@+id/agent_spinner"
+        android:popupBackground="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/agent_spinner_title"
+        app:backgroundTint="@color/white"
+        >
+
+    </android.support.v7.widget.AppCompatSpinner>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_above="@id/buttons"
+        android:layout_height="1px"
+        android:background="@drawable/separator_light"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/buttons"
+        >
+
+        <Button
+            android:id="@+id/save_button"
+            style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
+            android:textColor="@color/white"
+
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:layout_weight="1"
+
+            android:text="Сохранить" />
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:background="@drawable/separator_light"/>
+
+        <Button
+            android:id="@+id/send_button"
+
+            style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
+            android:textColor="@color/white"
+
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+
+            android:layout_weight="1"
+
+            android:text="Отправить" />
+    </LinearLayout>
+
+</RelativeLayout>
+
+
+
+

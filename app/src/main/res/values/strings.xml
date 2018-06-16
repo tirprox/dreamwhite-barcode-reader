@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ok">OK</string>
+    <string name="permission_camera_rationale">Доступ к камере нужен для захвата штрихкодов.</string>
+    <string name="no_camera_permission">Приложение не может работать без доступа к камере. Оно будет закрыто.</string>
+    <string name="low_storage_error">Не хаватает места на устройстве!</string>
+    <string name="title_activity_main">Приемка товаров</string>
+    <string name="barcode_header">Click &quot;Read Barcode&quot; to read a barcode</string>
+    <string name="read_barcode">Сканировать</string>
+    <string name="auto_focus">Auto Focus</string>
+    <string name="use_flash">Use Flash</string>
+    <string name="barcode_success">Barcode read successfully</string>
+    <string name="barcode_failure">No barcode captured</string>
+    <string name="barcode_error">"Error reading barcode: %1$s"</string>
+</resources>
