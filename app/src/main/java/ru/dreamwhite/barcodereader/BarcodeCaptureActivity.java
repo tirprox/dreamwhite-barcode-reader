@@ -29,6 +29,7 @@ import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.hardware.Camera;
 import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.media.ToneGenerator;
 import android.os.Build;
 import android.os.Bundle;
@@ -85,6 +86,8 @@ public final class BarcodeCaptureActivity extends AppCompatActivity
     private CameraSourcePreview mPreview;
     private GraphicOverlay<BarcodeGraphic> mGraphicOverlay;
     private ToneGenerator toneGenerator;
+    private MediaPlayer ePlayer;
+
 
     // helper objects for detecting taps and pinches.
     //private ScaleGestureDetector scaleGestureDetector;
@@ -109,6 +112,7 @@ public final class BarcodeCaptureActivity extends AppCompatActivity
         setContentView(R.layout.barcode_capture);
 
         toneGenerator = new ToneGenerator(AudioManager.STREAM_MUSIC, 100);
+        ePlayer = MediaPlayer.create(this, R.raw.error);
 
         mPreview = (CameraSourcePreview) findViewById(R.id.preview);
         mGraphicOverlay = (GraphicOverlay<BarcodeGraphic>) findViewById(R.id.graphicOverlay);
@@ -569,12 +573,22 @@ public final class BarcodeCaptureActivity extends AppCompatActivity
                         Toast.makeText(context, "Неизвестный штрихкод: " + barcode.displayValue, Toast.LENGTH_SHORT).show();
                     }
                 });
+                ePlayer.start();
+
+                /*toneGenerator.startTone(ToneGenerator.TONE_CDMA_ABBR_ALERT,50);
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        toneGenerator.startTone(ToneGenerator.TONE_CDMA_ABBR_ALERT,50);
+                    }
+                }, 100);*/
 
                 //Toast.makeText(this, "Неизвестный штрихкод: " + barcode.displayValue, Toast.LENGTH_SHORT).show();
             }
             else {
                 DataManager.instance().addCode(barcode.displayValue, true);
                 final String name = DataManager.instance().getItemForBarcode(barcode.displayValue).name;
+                toneGenerator.startTone(ToneGenerator.TONE_CDMA_PIP,100);
 
                 handler.post(new Runnable() {
                     @Override
@@ -586,7 +600,7 @@ public final class BarcodeCaptureActivity extends AppCompatActivity
             }
 
 
-            toneGenerator.startTone(ToneGenerator.TONE_CDMA_PIP,100);
+
 
 
             isTimeout = true;

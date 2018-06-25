@@ -138,8 +138,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void getAssortment() throws IOException {
 
         if (DataManager.instance().getAssortment().isEmpty()) {
+
+            String url = "https://sync.dreamwhite.ru/output/short-report.json";
+
             Request request = new Request.Builder()
-                    .url("https://dreamwhite.ru/wp-content/plugins/import-export/import-products/short-report.json")
+                    .url(url)
                     .build();
 
 
